@@ -1,0 +1,16 @@
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li {% if message.tags %} class="{{message.tags}}"{% endif %}>{{message}}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<h1>Detail.html</h1>
+
+{{qs.slug}} <br>
+{{qs.content}}
+<br>
+<!-- <a href="/blog/{{qs.id}}/edit">Edit</a> -->
+<a href="{% url 'update' qs.id %}">Edit</a>
+<a href="{% url 'delete' qs.id %}">Delete</a>

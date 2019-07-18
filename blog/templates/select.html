@@ -1,0 +1,14 @@
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li {% if message.tags %} class="{{message.tags}}"{% endif %}>{{message}}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% include 'search.html' %}
+<h1>SELECT.HTML</h1>
+{% for obj in qs %}
+<!-- <a href="/blog/{{obj.id}}">{{obj.title}}</a><br> -->
+<a href="{% url 'detail' obj.id %}">{{obj.title}}</a><br>
+<!-- <a href="{{ obj.get_absolute_url }}">{{obj.title}}</a><br> -->
+{% endfor %}

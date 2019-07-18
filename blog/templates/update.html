@@ -1,0 +1,6 @@
+<h1>update.html</h1>
+<b>{{form.instance.title}}</b>
+<form method="POST" action=".">{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Update">
+</form>
